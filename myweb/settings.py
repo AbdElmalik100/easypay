@@ -30,7 +30,6 @@ ALLOWED_HOSTS = ['.vercel.app','now.sh','127.0.0.1','localhost']
 # Application definition
 
 INSTALLED_APPS = [
-    'easypay.apps.EasypayConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -54,7 +53,7 @@ ROOT_URLCONF = 'myweb.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates','static'],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -73,17 +72,24 @@ WSGI_APPLICATION = 'myweb.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'railway',
+#         'USER': 'postgres',
+#         'PASSWORD': 'c26d1dcea*ea2*fEF5faaDfdBD46egcG',
+#         'HOST': 'roundhouse.proxy.rlwy.net',
+#         'PORT': '59897',
+#     }
+# }
+
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': 'c26d1dcea*ea2*fEF5faaDfdBD46egcG',
-        'HOST': 'roundhouse.proxy.rlwy.net',
-        'PORT': '59897',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 
 # Password validation
